@@ -5,18 +5,25 @@ import axios from "axios";
 import uuid from "uuid/dist/v4";
 
 class JokeList extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			jokes: [],
-		};
-	}
-
 	static defaultProps = {
 		numJokesToGet: 10,
 	};
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			jokes: JSON.parse(window.localStorage.getItem("jokes") || "[]"),
+		};
+		this.fetchNewJokes = this.fetchNewJokes.bind(this);
+	}
+
 	async componentDidMount() {
+		//If there are jokes in local storage load new ones and save them in local storage
+		if (this.state.jokes.length === 0) {
+			this.getjokes();
+		}
+	}
+	async getjokes() {
 		// Load jokes from API and set the state to hold them
 		let jokes = [];
 		while (jokes.length < this.props.numJokesToGet) {
@@ -26,20 +33,37 @@ class JokeList extends Component {
 			});
 			jokes.push({ id: uuid(), jokeText: res.data.joke, votes: 0 });
 		}
-		this.setState({ jokes: jokes });
+		//Set the state with the old jokes and the new jokes loaded in
+		this.setState(
+			(prevState) => {
+				return { jokes: [...prevState.jokes, ...jokes] };
+			}, //Save the new jokes loaded in to local storage
+			() =>
+				window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
+		);
+    }
+    
+	// Fetches 10 new jokes from the API
+	fetchNewJokes() {
+		this.getjokes();
 	}
 	// Function to handle whether a vote is upvoted or downvoted
 	//  - Map over the joke and find the joke ID passed in
 	//      - Make a new object with the votes and update the votes value
 	//  - Else just add the joked unchanged
 	handleVote(id, delta) {
-		this.setState((prevState) => {
-			return {
-				jokes: prevState.jokes.map((joke) =>
-					joke.id === id ? { ...joke, votes: joke.votes + delta } : joke
-				),
-			};
-		});
+		this.setState(
+			(prevState) => {
+				return {
+					jokes: prevState.jokes.map((joke) =>
+						joke.id === id ? { ...joke, votes: joke.votes + delta } : joke
+					),
+				};
+			},
+			//Save the votes/rating for each of the jokes to the local storage
+			() =>
+				window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
+		);
 	}
 
 	render() {
@@ -53,7 +77,9 @@ class JokeList extends Component {
 						src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg"
 						alt="emoji"
 					/>
-					<button className="JokeList-btn">New Jokes</button>
+					<button onClick={this.fetchNewJokes} className="JokeList-btn">
+						New Jokes
+					</button>
 				</div>
 
 				<div className="JokeList-jokes">
