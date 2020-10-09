@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Joke.css";
-import emojiClasses from "./emojiClasses";
+import getEmoji from "../helpers/getEmoji";
 import getRGB from "../helpers/getRGB";
 
 class Joke extends Component {
@@ -26,7 +26,7 @@ class Joke extends Component {
 
 				<div className="Joke-text">{jokeText}</div>
 				<div className="Joke-emoji">
-					<i className="em em-rolling_on_the_floor_laughing"></i>
+					<i className={getEmoji(votes)}></i>
 				</div>
 			</div>
 		);
