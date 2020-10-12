@@ -103,7 +103,7 @@ class JokeList extends Component {
 						alt="emoji"
 					/>
 					<button onClick={this.fetchNewJokes} className="JokeList-btn">
-						New Jokes
+						Get New Jokes
 					</button>
 				</div>
 
