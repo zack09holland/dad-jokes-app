@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/dad-jokes-app/static/css/main.5f361e03.chunk.css",
-    "main.js": "/dad-jokes-app/static/js/main.335b4476.chunk.js",
-    "main.js.map": "/dad-jokes-app/static/js/main.335b4476.chunk.js.map",
+    "main.css": "/dad-jokes-app/static/css/main.3e0a5d0c.chunk.css",
+    "main.js": "/dad-jokes-app/static/js/main.0cf906d6.chunk.js",
+    "main.js.map": "/dad-jokes-app/static/js/main.0cf906d6.chunk.js.map",
     "runtime-main.js": "/dad-jokes-app/static/js/runtime-main.f279d699.js",
     "runtime-main.js.map": "/dad-jokes-app/static/js/runtime-main.f279d699.js.map",
-    "static/js/2.c5da6573.chunk.js": "/dad-jokes-app/static/js/2.c5da6573.chunk.js",
-    "static/js/2.c5da6573.chunk.js.map": "/dad-jokes-app/static/js/2.c5da6573.chunk.js.map",
+    "static/js/2.7dad8c9f.chunk.js": "/dad-jokes-app/static/js/2.7dad8c9f.chunk.js",
+    "static/js/2.7dad8c9f.chunk.js.map": "/dad-jokes-app/static/js/2.7dad8c9f.chunk.js.map",
     "index.html": "/dad-jokes-app/index.html",
-    "precache-manifest.2ae5b3873fc2157407c93f3666ec7b14.js": "/dad-jokes-app/precache-manifest.2ae5b3873fc2157407c93f3666ec7b14.js",
+    "precache-manifest.2f84bfca08255284bffdd04d2df606df.js": "/dad-jokes-app/precache-manifest.2f84bfca08255284bffdd04d2df606df.js",
     "service-worker.js": "/dad-jokes-app/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/dad-jokes-app/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.c5da6573.chunk.js.LICENSE.txt": "/dad-jokes-app/static/js/2.c5da6573.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/dad-jokes-app/static/media/logo.5d5d9eef.svg"
+    "static/css/main.3e0a5d0c.chunk.css.map": "/dad-jokes-app/static/css/main.3e0a5d0c.chunk.css.map",
+    "static/js/2.7dad8c9f.chunk.js.LICENSE.txt": "/dad-jokes-app/static/js/2.7dad8c9f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f279d699.js",
-    "static/js/2.c5da6573.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.335b4476.chunk.js"
+    "static/js/2.7dad8c9f.chunk.js",
+    "static/css/main.3e0a5d0c.chunk.css",
+    "static/js/main.0cf906d6.chunk.js"
   ]
 }
