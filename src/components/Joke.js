@@ -28,6 +28,7 @@ class Joke extends Component {
 				<div className="Joke-emoji">
 					<i className={getEmoji(votes)}></i>
 				</div>
+                
 			</div>
 		);
 	}

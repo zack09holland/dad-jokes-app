@@ -35,7 +35,7 @@ class JokeList extends Component {
 				let res = await axios.get(url, {
 					headers: { Accept: "application/json" },
 				});
-				if (this.seenJokes.has(res.data.joke)) {
+				if (!this.seenJokes.has(res.data.joke)) {
 					jokes.push({ id: uuid(), jokeText: res.data.joke, votes: 0 });
 				} else {
 					console.log("Found a duplicate");
